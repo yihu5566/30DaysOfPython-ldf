@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 Days of JavaScript</title>
+  </head>
+  <body>
+    <button onclick="alert('Hello World')">Click me</button>
+    <script>
+      // 集合和映射 set 和 map 
+      const companies = new Set();
+      console.log(companies); // Set()
+      // lang 语言 数组 去重
+      const languages = ['English', 'Chinese', 'Java', 'C', 'JavaScript' ,'English'];
+      const uniqueLanguages = new Set(languages);
+      console.log(uniqueLanguages); // Set(5) {"English", "Chinese", "Java", "C", "JavaScript"}
+      for (const language of uniqueLanguages) {
+        console.log(language);
+      }
+      console.log('-------------------')
+      // add 添加元素
+      uniqueLanguages.add('Python');
+      console.log(uniqueLanguages); // Set(6) {"English", "Chinese", "Java", "C", "JavaScript", "Python"}
+      console.log('-------------------')
+      // delete 删除元素
+      uniqueLanguages.delete('English');
+      console.log(uniqueLanguages); // Set(5) {"Chinese", "Java", "C", "JavaScript", "Python"}
+      console.log('-------------------')
+      // clear 清空集合
+      uniqueLanguages.clear();
+      console.log(uniqueLanguages); // Set()
+      console.log('-------------------')
+      // 统计 元素 在集合中出现的次数
+      const languages_new = ['English', 'Chinese', 'Java', 'C', 'JavaScript' ,'English'];
+      const uniqueLanguages_new = new Set(languages_new);
+      console.log(uniqueLanguages_new); // Set(5) {"English", "Chinese", "Java", "C", "JavaScript"}
+      //统计数据
+      const counts  = [];
+      const count = {};
+      for (const language of uniqueLanguages_new) {
+        const filter = languages_new.filter((item) => item === language);
+        counts.push({lang:language, count:filter.length});
+      }
+      console.log(counts);
+     // 集合的并集
+     const union = new Set([...languages_new, ...uniqueLanguages_new]);
+     console.log('并集:', union); // Set(6) {"English", "Chinese", "Java", "C", "JavaScript", "Python"}
+     console.log('-------------------')
+     // 集合的交集
+     const intersection = new Set([...languages_new].filter((item) => uniqueLanguages_new.has(item)));
+     console.log('交集:', intersection); // Set(2) {"Chinese", "Java"}
+     console.log('-------------------')
+     // 集合的差集
+     languages_new.push('Python');
+     const difference = new Set([...languages_new].filter((item) => !uniqueLanguages_new.has(item)));
+     console.log('差集:', difference); // Set(1) {"Python"}
+     console.log('-------------------')
+     //map  操作集合
+     countries = [['China', '中国'], ['United States', '德国'], ['France', '法国']];
+     const map = new Map(countries);
+     console.log(map); // Map(3) {"China" => "中国", "United States" => "德国", "France" => "法国"}
+     // add 添加元素到映射 set 方法 
+     map.set('China', '中华人民共和国');
+     console.log(map); // Map(4) {"China" => "中国", "United States" => "德国", "France" => "法国"}
+     // get 获取元素 get 方法
+     console.log(map.get('China')); // 中国
+     console.log(map.get('United States')); // 德国
+     console.log(map.get('France')); // 法国
+     // has 检查元素是否存在 has 方法
+     console.log(map.has('China')); // true
+     console.log(map.has('United States')); // true
+     console.log(map.has('France')); // true
+     // xunhuan 遍历映射
+     for (const [key, value] of map) {
+       console.log(key, value);
+     }
+    </script>
+  </body>
+</html>

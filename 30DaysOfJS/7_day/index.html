@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 Days of JavaScript</title>
+  </head>
+  <body>
+    <button onclick="sayHello()">Click me</button>
+    <script type="text/javascript">
+      // function declaration
+      function sayHello() {
+        console.log("Hello World");
+      }
+      // 带参数和返回值函数
+      function addTwoNumbers(numOne, numTwo) {
+        let sum = numOne + numTwo;
+        return sum;
+      }
+      let sum = addTwoNumbers(10, 20);
+      console.log(sum); // 30
+      //多参数函数
+      function addAllNumbers(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        return sum;
+      }
+      let sum2 = addAllNumbers([10, 20, 30]);
+      console.log(sum2); // 60
+      // arguments对象, 不限参数数量
+      function addAllNumbers2() {
+        let sum = 0;
+        for (let i = 0; i < arguments.length; i++) {
+          sum += arguments[i];
+        }
+        return sum;
+      }
+      let sum3 = addAllNumbers2(10, 20, 30);
+      console.log(sum3); // 60
+      console.log("-----------------"); 
+      //箭头函数
+      const addTwoNumbers3 = (...arr) => {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+        }
+        return sum;
+      };
+      let sum4 = addTwoNumbers3(10, 20, 30, 40);
+      console.log(sum4); // 100
+      // 匿名函数
+     const sayHello1 = function () {
+        console.log("Hello World");
+     }
+     sayHello1();
+     // 立即执行函数/自调用 
+     (function () {
+        console.log("Hello World - self-executing");
+     })();
+     // 立即执行函数/自调用 2
+     (function (n) {
+        console.log(`Hello World - self-executing ${n}`);
+     })(4);
+     //箭头函数
+     const sayHello2 = () => {
+        console.log("Hello World - arrow function");
+     }
+     sayHello2();
+     // 箭头函数 2
+     const addTwoNumbers5 = (numOne, numTwo) => {
+        let sum = numOne + numTwo;
+        return sum;
+     }
+     let sum5 = addTwoNumbers5(10, 20);
+     console.log(sum5); // 30
+     // 箭头函数 3简化
+     const addTwoNumbers6 = (numOne, numTwo) => numOne + numTwo;
+     let sum6 = addTwoNumbers6(10, 20);
+     console.log(sum6); // 30
+     //带默认参数的function 箭头函数
+     const addTwoNumbers7 = (numOne, numTwo = 0) => {
+        let sum = numOne + numTwo;
+        return sum;
+     }
+     let sum7 = addTwoNumbers7(10);
+     console.log(sum7); // 10
+     let sum8 = addTwoNumbers7(10, 20);
+     console.log(sum8); // 30
+    </script>
+  </body>
+</html>

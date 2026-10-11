@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>30 Days of JavaScript</title>
+  </head>
+  <body>
+    <button onclick="alert('Hello World')">Click me</button>
+    <script>
+      // 高阶函数 是一个函数作为参数或返回值的函数
+      const callback = (n) => {
+        return n ** 2;
+      };
+      function cube(callback, n) {
+        return callback(n) * n;
+      }
+      console.log(cube(callback, 2)); // 8
+      //返回函数
+      const higherOrder = (n) => {
+        const doSomething = (m) => {
+          const dowhatever = (t) => {
+            return n * m * t;
+          };
+          return dowhatever;
+        };
+        return doSomething;
+      };
+      console.log(higherOrder(2)(3)(4)); // 24
+      // foreach 回掉函数
+      const numbers = [1, 2, 3, 4, 5];
+      const sumArray = (arr) => {
+        let sum = 0;
+        const callback = function (item) {
+          sum += item;
+        };
+        arr.forEach(callback);
+        return sum;
+      };
+      console.log(sumArray(numbers)); // 15
+      //时间间隔函数 setInterval
+      function printHello() {
+        console.log("Hello World");
+      }
+
+      const intervalId = setInterval(printHello, 2000); // 每2秒打印一次Hello World
+      clearInterval(intervalId); // 清除定时器  
+      // setTimeout 定时器 2秒后打印一次Hello World
+      setTimeout(printHello, 2000); // 2秒后打印一次Hello Worlds
+      console.log('-------------------')
+      //函数式编程 了解 foreach  map  filter  reduce  every  some  find  findIndex等
+
+      numbers.forEach((item, index, arr) => console.log(item, index, arr));
+      console.log('-------------------')
+      // map 映射数组
+      const doubledNumbers = numbers.map((item) => item * 2);
+      console.log(doubledNumbers); // [2, 4, 6, 8, 10]
+
+      // filter 过滤数组
+      const evenNumbers = numbers.filter((item) => item % 2 === 0);
+      console.log(evenNumbers); // [2, 4]
+
+      // reduce 累加数组
+      const sum = numbers.reduce((acc, item) => acc + item, 0);
+      console.log(sum); // 15
+      console.log('-------------------')
+      //every 检查数组是否所有元素都符合条件条件
+      const names = ['LudongFang', 'LudongFang2', 'LudongFang3'];
+      const allNamesStartWithL = names.every((name) => name.startsWith('L'));
+      console.log(allNamesStartWithL); // true
+      //find 查找第一个符合条件的元素
+      const ages = [20, 30, 40, 50];
+      const firstAgeOver30 = ages.find((age) => age > 30);
+      console.log(firstAgeOver30); // 40
+      console.log('-------------------')
+      //findIndex 查找第一个符合条件的元素的索引
+      const firstAgeOver30Index = ages.findIndex((age) => age > 30);
+      console.log(firstAgeOver30Index); // 2
+      const index = names.findIndex((name) => name.startsWith('L'));
+      console.log(index); // 0
+      console.log('-------------------')
+      //some 检查数组是否至少有一个元素符合条件条件
+      const hasAgeOver30 = ages.some((age) => age > 30);
+      console.log(hasAgeOver30); // true
+      console.log('-------------------')
+
+      //sort 排序数组
+      const originalNumbers = [5, 3, 8, 1, 2];
+      console.log(originalNumbers); // [5, 3, 8, 1, 2]
+      const sortedNumbers = originalNumbers.sort((a, b) => a - b);
+      console.log(sortedNumbers); // [1, 2, 3, 5, 8]
+      console.log('-------------------')
+      //对象数组进行排序
+      const people = [
+        { name: 'LudongFang', age: 25 },
+        { name: 'LudongFang2', age: 30 },
+        { name: 'LudongFang3', age: 28 },
+      ];
+      const sortedPeople = people.sort((a, b) => a.age - b.age);
+      console.log(sortedPeople); // [{ name: 'LudongFang3', age: 25 }, { name: 'LudongFang', age: 28 }, { name: 'LudongFang2', age: 30 }]
+      console.log('-------------------')
+
+    </script>
+  </body>
+</html>
