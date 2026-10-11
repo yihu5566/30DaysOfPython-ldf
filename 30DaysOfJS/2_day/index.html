@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">    
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>30 Days of JavaScript</title>
+        </head>
+        <body>
+            <div>
+                <h1>30 Days of JavaScript</h1>
+                <p>30DaysOfJavaScript: Day 2</p>
+            </div>
+            <script type="text/javascript">
+                let a = 10
+                if (a>11) {
+                    console.log('a is greater than 11')
+                }else{
+                    console.log('a is not greater than 11')
+                }
+
+                let b = 11
+                if (b>11) {
+                    console.log('b is greater than 11')
+                }else if (b==11) {
+                    console.log('b is equal to 11')
+                }else{
+                    console.log('b is not greater than 11')
+                }
+                // switch 语句
+                // let dayUserInput = prompt('What day is today ?')
+                // let day = dayUserInput.toLowerCase()
+                let day = 'monday'
+                switch (day) {
+                    case 'monday':
+                        console.log('Monday')
+                        break
+                    case 'tuesday':
+                        console.log('Tuesday')
+                        break
+                    case 'wednesday':
+                        console.log('Wednesday')
+                        break
+                    case 'thursday':
+                        console.log('Thursday')
+                        break
+                    case 'friday':
+                        console.log('Friday')
+                        break
+                    case 'saturday':
+                        console.log('Saturday')
+                        break
+                    case 'sunday':
+                        console.log('Sunday')
+                        break
+                    default:
+                        console.log('Invalid day')
+                }
+                //  三元运算符
+                let aa = 10;
+                let isEven = aa%2==0 ? 'Even' : 'Odd'
+                console.log(isEven)
+            </script>
+        </body>
+</html>

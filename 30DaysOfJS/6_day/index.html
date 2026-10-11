@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>30 Days of JavaScript</title>
+    </head>
+    <body>
+        <div>
+            <h1>30 Days of JavaScript</h1>
+            <p>30DaysOfJavaScript: Day 5</p>
+        </div>
+        <script type="text/javascript">
+            //loop 循环
+            // for 循环
+            for (let i = 0; i < 5; i++) {   
+                console.log(i);
+            }
+            // while 循环
+            let i = 0
+            while (i < 5) {
+                console.log(i)
+                i++
+            }
+            //do while 循环
+            let j = 0
+            do {
+                console.log(j)
+                j++
+            } while (j < 5)
+            //for of 循环
+            const numbers = [1, 2, 3, 4, 5]
+            for (const number of numbers) {
+                console.log(number) 
+            }
+            //for in 循环
+            const person = {
+                firstName: 'Asabeneh',
+                lastName: 'Yetayeh',
+                age: 250,
+                country: 'Finland',
+                city: 'Helsinki'
+            }
+            for (const key in person) {
+                console.log(key, person[key])
+            }
+            //for 循环  break continue
+            for (let i = 0; i < 10; i++) {
+                console.log(i)
+                if (i === 2) {  
+                    continue
+                }
+                if (i === 4) {
+                    break
+                }
+            }
+                      
+        </script>
+    </body>
